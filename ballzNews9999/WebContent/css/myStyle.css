@@ -1,6 +1,6 @@
 .sapMFeedListItemTextText {
 font-size: 0.6rem;
-color: #EB4141;
+color: #2CE768;;
 word-wrap: break-word;
 margin: 0rem;
 line-height: 1.4;
@@ -18,5 +18,11 @@ word-wrap: break-word;
 .sapMFeedListItem .sapMFeedListItemTextName a {
 font-size: 0.6rem;
 color: #00679e;
+word-wrap: break-word;
+}
+
+.sapMFeedListItemTextText {
+font-size: 0.875rem;
+color: #E75050;
 word-wrap: break-word;
 }
