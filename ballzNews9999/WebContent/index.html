@@ -1,43 +1,36 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-     	<meta charset="utf-8">
-    	<meta name="msapplication-tap-highlight" content="no" />
-		<meta name="Ballz News" content="">
-		<meta name="Balakrishnan" content="">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		
-		<script type="text/javascript" src="js/spin.min.js"></script>
-		<script type="text/javascript" src="js/application.js"></script>			
-		
-		<style>
-			.sapMFeedListItemTextText>.sapMLnk.sapMLnkDsbl, .sapMFeedListItemTextName>.sapMLnk.sapMLnkDsbl, .sap-desktop .sapMFeedListItemTextName>.sapMLnk.sapMLnkDsbl:hover {
-color: #BE647D !important;
-}
-.sapMFeedListItemTextText {
-font-size: 0.875rem;
-color: #000000;
-word-wrap: break-word;
-}
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="Ballz News" content="">
+<meta name="Balakrishnan" content="">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
 
-.sapMLnk, .sapMLnkDsbl, .sapMLnkMaxWidth {
-word-wrap: break-word !important;
-}
-		</style>
+<script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="js/application.js"></script>
 
-	</head>
-	<body class="sapUiBody" role="application">
-		<div id="content"></div>
-	</body>
-	
-				<script>
+		<style type="text/css">
+			.sapUiLbxI {
+				background-color: blue;
+				word-wrap: break-word;
+				font-size: 0.9rem;
+				color: red;
+		</style>		
+		
+</head>
+<body class="sapUiBody" role="application">
+	<div id="content"></div>
+</body>
+
+<script>
 		 oApplication.load(	"https://openui5.hana.ondemand.com/resources/sap-ui-core.js",
 							"sap-ui-bootstrap",
 							"sap.m,sap.ui.commons",
 							"sap_bluecrystal",
 							oApplication.onSAPUI5Loaded );
 	    </script>
-	
+
 </html>
