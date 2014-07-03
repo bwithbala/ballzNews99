@@ -32,7 +32,7 @@ alert("Inside Feed List");
 						var string = date.getDate() + " " + months[date.getMonth()]
 								+ " " + date.getFullYear();
 
-					//feedArray.timestamp = string;
+					feedArray.timestamp = string;
 						feedArray.sender = entry.title;
 						feedArray.text = entry.contentSnippet;
 						feedArray.info = entry.link;
