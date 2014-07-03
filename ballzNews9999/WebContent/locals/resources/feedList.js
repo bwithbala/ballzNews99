@@ -186,4 +186,3 @@ alert("Inside Feed List");
 
 		fillFeedListData(selectedNews);
 		
-		//oFeedList.addStyleClass('sapUiLbxI');
