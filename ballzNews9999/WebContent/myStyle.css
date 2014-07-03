@@ -1,0 +1,22 @@
+.sapMFeedListItemTextText {
+font-size: 0.6rem;
+color: #EB4141;
+word-wrap: break-word;
+margin: 0rem;
+line-height: 1.4;
+font-family: Arial,Helvetica,sans-serif;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.sapMFeedListItemTextText>.sapMLnk.sapMLnkDsbl, .sapMFeedListItemTextName>.sapMLnk.sapMLnkDsbl, .sap-desktop .sapMFeedListItemTextName>.sapMLnk.sapMLnkDsbl:hover {
+color: #30F35F;
+word-wrap: break-word;
+}
+
+.sapMFeedListItemTextText span, 
+.sapMFeedListItem .sapMFeedListItemTextName a {
+font-size: 0.6rem;
+color: #00679e;
+word-wrap: break-word;
+}
