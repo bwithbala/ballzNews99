@@ -46,21 +46,15 @@ oApplication = { // Application is an object
 	},
 	
 	initializeUI5: function(){
-		
+		 
     	 sap.ui.localResources("locals");
 		 jQuery.sap.require("locals.resources.jgfeed");
 		 jQuery.sap.require("locals.resources.feedList");
 		 jQuery.sap.require("locals.resources.app");
+		 jQuery.sap.require("locals.resources.mainPage");
 		 
-			var feedListPage = new sap.m.Page("feedListPage", {
-				title : "",
-				BackgroundDesign: sap.m.BackgroundDesign.list,
-				showHeader : false,
-				enableScrolling : true
-			});
-			
-			feedListPage.addContent(oFeedList);
-			appFeedList.addPage(feedListPage);			
+		 
+    	appFeedList.addPage(feedListPage);			
 
 	}	
 }	
