@@ -77,7 +77,7 @@ alert("Inside Feed List");
 
 		var oFeedList = new sap.m.List("oFeedItemList", {
 			mode : "SingleSelectMaster",
-		//	BackgroundDesign: sap.m.BackgroundDesign.list,
+			BackgroundDesign: sap.m.BackgroundDesign.list,
 		/*	select: function(event){
 			     	var selectedInfo = event.getParameter('listItem').getInfo();
 			     	 selectedItem = selectedInfo ;
@@ -166,7 +166,7 @@ alert("Inside Feed List");
 		        	);  */      		
 		        		
 		//	}
-		showSeparators: sap.m.ListSeparators.All,
+		//showSeparators: sap.m.ListSeparators.All,
 		});
 
 
