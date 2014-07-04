@@ -12,6 +12,17 @@
 			jQuery.sap.require("sap.ui.core.IconPool");
 			var sURI = sap.ui.core.IconPool.getIconURI("personnel-view");
 			
+			var slider = new sap.m.Slider("opacitySlider", {
+				width : "50%",
+				min : 0,
+				max : 1,
+				step : 0.01,
+				liveChange : function(oEvent) {
+					var value = oEvent.getParameter("value");
+					appFeedList.setBackgroundOpacity(value);
+				}
+			});
+			
 			//Create a ColorPicker Control without parameters
 			var oColorPicker1 = new sap.ui.commons.ColorPicker();
 
@@ -20,14 +31,12 @@
 
 			function handleColorPickerChange(oEvent) {
 				var colors = oEvent.getParameters();
-				this.app.setBackgroundColor(colors.hex);
-				this.app.setBackgroundOpacity(0.6);
+				appFeedList.setBackgroundColor(colors.hex);
+				appFeedList.setBackgroundOpacity(0.6);
 				sap.ui.getCore().byId("opacitySlider")
 						.setValue(0.6);
-				this.app.setBackgroundRepeat(true);
-				/*this.app.ui.getCore().byId("repeatSelect")
-						.setSelectedKey("repeat");
-				*/
+				appFeedList.setBackgroundRepeat(true);
+
 			};
 					
 
@@ -58,15 +67,14 @@
 											{
 												text : "Stretched Cheetah",
 												press : function() {
-													this.app
+													appFeedList
 															.setBackgroundImage("images/Telangana_logo.jpg");
-													this.app.setBackgroundColor("");
-													this.app.setBackgroundOpacity(1);
-													this.app.ui.getCore().byId("opacitySlider")
+													appFeedList.setBackgroundColor("");
+													appFeedList.setBackgroundOpacity(1);
+													appFeedList.ui.getCore().byId("opacitySlider")
 															.setValue(1);
-													this.app.setBackgroundRepeat(false);
-													sap.ui.getCore().byId("repeatSelect")
-															.setSelectedKey("stretch");
+													appFeedList.setBackgroundRepeat(false);
+
 												}
 											}),
 
@@ -74,40 +82,30 @@
 											{
 												text : "Repeating translucent Cheetah",
 												press : function() {
-													this.app
+													appFeedList
 															.setBackgroundImage("images/Telangana_logo.jpg");
-													this.app.setBackgroundColor("#67E02B");
-													this.app.setBackgroundOpacity(0.6);
+													appFeedList.setBackgroundColor("#67E02B");
+													appFeedList.setBackgroundOpacity(0.6);
 													sap.ui.getCore().byId("opacitySlider")
 															.setValue(0.6);
-													this.app.setBackgroundRepeat(true);
-													sap.ui.getCore().byId("repeatSelect")
-															.setSelectedKey("repeat");
+													appFeedList.setBackgroundRepeat(true);
+
 												}
 											}),
 
 									new sap.m.Button({
 										text : "Clear Background",
 										press : function() {
-											this.app.setBackgroundImage("");
-											this.app.setBackgroundColor("");
-											this.app.setBackgroundOpacity(1);
+											appFeedList.setBackgroundImage("");
+											appFeedList.setBackgroundColor("");
+											appFeedList.setBackgroundOpacity(1);
 											sap.ui.getCore().byId("opacitySlider").setValue(1);
-											this.app.setBackgroundRepeat(false);
-											sap.ui.getCore().byId("repeatSelect")
-													.setSelectedKey("stretch");
+											appFeedList.setBackgroundRepeat(false);
+
 										}
 									}),
-								new sap.m.Slider("opacitySlider", {
-										width : "50%",
-										min : 0,
-										max : 1,
-										step : 0.01,
-										liveChange : function(oEvent) {
-											var value = oEvent.getParameter("value");
-											this.app.setBackgroundOpacity(value);
-										}
-									}),
+									
+									slider
 
 							],
 							initialFocus : "focusInput"
