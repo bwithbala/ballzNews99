@@ -171,7 +171,8 @@ alert("Inside Feed List");
 
 
 		var oFeedListItemTemplate = new sap.m.FeedListItem({
-			type : sap.m.ListType.Active,
+			//type : sap.m.ListType.Active,
+			type : sap.m.ListType.Detail ,
 			//icon : "{icon}",
 			//activeIcon : "{activeIcon}",
 			text : "{text}",
