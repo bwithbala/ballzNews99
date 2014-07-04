@@ -22,7 +22,7 @@ oApplication = { // Application is an object
 		s.src = src;
 		s.id = id;
 		s.setAttribute("data-sap-ui-libs", libs);
-     	s.setAttribute("data-sap-ui-theme", theme);
+     	//s.setAttribute("data-sap-ui-theme", theme);
 		s.onload = s.onreadystatechange = function() {
 		    //console.log( this.readyState ); //uncomment this line to see which ready states are called.
 			if ( !r && (!this.readyState || this.readyState == 'complete') ){
