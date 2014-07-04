@@ -1,6 +1,6 @@
 			var feedListPage = new sap.m.Page("feedListPage", {
 				title : "Ballz News",
-				BackgroundDesign: sap.m.BackgroundDesign.list,
+				BackgroundDesign: sap.m.BackgroundDesign.Transparent,
 				showHeader : true,
 				enableScrolling : true
 			});

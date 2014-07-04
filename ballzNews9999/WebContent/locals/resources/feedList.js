@@ -77,7 +77,7 @@ alert("Inside Feed List");
 
 		var oFeedList = new sap.m.List("oFeedItemList", {
 			mode : "SingleSelectMaster",
-			BackgroundDesign: sap.m.PageBackgroundDesign.solid,
+			BackgroundDesign: sap.m.BackgroundDesign.Transparent,
 		/*	select: function(event){
 			     	var selectedInfo = event.getParameter('listItem').getInfo();
 			     	 selectedItem = selectedInfo ;
