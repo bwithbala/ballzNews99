@@ -10,6 +10,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 
 <script type="text/javascript" src="js/spin.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
 <script type="text/javascript" src="js/application.js"></script>
 
 		<style type="text/css">
@@ -55,6 +57,22 @@
 </head>
 <body class="sapUiBody" role="application">
 	<div id="content"></div>
+	
+			<script>
+				$(function() {
+					//Enable swiping...
+					$("#content").swipe( {
+						//Generic swipe handler for all directions
+						swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+						//	$(this).text("You swiped " + direction );
+							alert("You Swiped:" +direction);
+						},
+						//Default is 75px, set to 0 for demo so any distance triggers swipe
+					   threshold:0
+					});
+				});
+			</script>	
+	
 </body>
 
 <script>
