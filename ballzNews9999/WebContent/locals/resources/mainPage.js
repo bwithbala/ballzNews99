@@ -138,3 +138,23 @@
 			
 			feedListPage.setCustomHeader(Bar);  	
 			
+			
+			$(function() {
+				//Enable swiping...
+				$("#content").swipe( {
+					//Generic swipe handler for all directions
+					swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+					//	$(this).text("You swiped " + direction );
+						alert("You Swiped:" +direction);
+						alert("Finger Count: " +fingerCount);
+						alert("Finger Data: " +fingerData);
+						
+						oPopover.setPlacement(sap.m.PlacementType.Left);
+						oPopover.openBy(this);
+						
+					},
+					//Default is 75px, set to 0 for demo so any distance triggers swipe
+				   threshold:0
+				});
+			});
+			
