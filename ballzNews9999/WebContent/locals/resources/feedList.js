@@ -98,6 +98,10 @@
 			
 			});		
 		
+		var savedFeedData = {
+				chunks : []
+			};				
+		
 		
 		var oFeedList = new sap.m.List("oFeedItemList", {
 			inset : false,
@@ -109,15 +113,13 @@
 				new sap.m.Button({
 			        text : "Save",
 			        icon: sap.ui.core.IconPool.getIconURI("save"),			        
-			        type : "Accept",
+			        type : "Reject",
 			            tap : function() { 
 
                             alert("Inside Tap Function");
                           //  alert("selectedItem after Tap" +selectedItem);	
 			            	
-			    			var savedFeedData = {
-			    					chunks : []
-			    				};		
+
 			    		
 			    					var savedFeedArray = {};	
 			    						
@@ -127,14 +129,15 @@
 			    					savedFeedArray.info = saveArtInfo;
 			    					savedFeedArray.showIcon = false;
 			    					savedFeedArray.senderActive = false;
+			    					alert("Saved Feed Title:" +savedFeedArray.text);
 			    					savedFeedData.chunks.push(savedFeedArray);
 			    						
 			    						
-			    					var oModel = new sap.ui.model.json.JSONModel();
+			    					var oSavedFeedModel = new sap.ui.model.json.JSONModel();
 			    					// set the data for the model
-			    					oModel.setData(savedFeedData);
+			    					oSavedFeedModel.setData(savedFeedData);
 			    					// set the model to the list
-			    					oSavedFeedList.setModel(oModel);
+			    					oSavedFeedList.setModel(oSavedFeedModel);
 			    					// bind Aggregation
 			    					oSavedFeedList.bindAggregation("items", "/chunks", oSavedFeedListItemTemplate);				            	
 			            	
