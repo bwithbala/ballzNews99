@@ -76,8 +76,15 @@
 				$("#content").swipe( {
 					
 					tap:function(event, target) {
+						  alert("Inside Tap");
 						  oPopover.close();
 				        },
+
+				        doubleTap:function(event, target) {
+				        	alert("Inside Double Tap");
+				        	/*  alert("Inside Tap");doubleTapCount++;
+				            msg(target); */
+				          },
 					
 					//Generic swipe handler for all directions
 					swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
@@ -87,7 +94,7 @@
 							
  					        alert("You Swiped:" +direction);
 							alert("Finger Count: " +fingerCount);
-							alert("Finger Data: " +fingerData); 
+							//alert("Finger Data: " +fingerData); 
 							
 							oPopover.setPlacement(sap.m.PlacementType.Left);
 							oPopover.openBy(this);
