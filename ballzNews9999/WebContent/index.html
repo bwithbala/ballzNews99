@@ -74,10 +74,15 @@
 			$(function() {
 				//Enable swiping...
 				$("#content").swipe( {
+					
+					tap:function(event, target) {
+						  oPopover.close();
+				        },
+					
 					//Generic swipe handler for all directions
 					swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 					//	$(this).text("You swiped " + direction );
-					 	if (direction == "right" )
+					 	if (direction == "right" && fingerCount == "2")
 						{ 
 							
  					        alert("You Swiped:" +direction);
@@ -90,6 +95,8 @@
 
 						
 					},
+					
+					
 					//Default is 75px, set to 0 for demo so any distance triggers swipe
 				   threshold:0,
 				   fingers:'all'
