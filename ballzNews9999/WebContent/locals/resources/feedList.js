@@ -75,8 +75,30 @@
 		strConcat = strConcat.concat(w);
 		strConcat = strConcat.concat(px);
 		
-		var selectedItem;
+		var saveArtInfo;
+		var saveArtSender;
+		var saveArtText;
+		var saveArtTimestamp;
+		
+		var oSavedListItemTemplate = new sap.m.FeedListItem({
+			type : sap.m.ListType.Active,
+			text : "{text}",
+			sender : "{sender}",
+			showIcon : "{showIcon}",
+			senderActive: "{senderActive}",
+			info : "{info}",
+			timestamp : "{timestamp}",
 
+		});		
+		
+		var oSavedFeedList = new sap.m.List("oSavedFeedItemList", {
+			inset : false,
+			showUnread: true,
+			BackgroundDesign: sap.m.BackgroundDesign.Transparent,	
+			
+			});		
+		
+		
 		var oFeedList = new sap.m.List("oFeedItemList", {
 			inset : false,
 			showUnread: true,
@@ -92,6 +114,31 @@
 
                          //   alert("Inside Tap Function");
                           //  alert("selectedItem after Tap" +selectedItem);	
+			            	
+			    			var savedFeedData = {
+			    					chunks : []
+			    				};		
+			    		
+			    					var savedFeedArray = {};	
+			    						
+			    					savedFeedArray.timestamp = saveArtTimestamp;
+			    					savedFeedArray.sender = saveArtSender;
+			    					savedFeedArray.text = saveArtText;
+			    					savedFeedArray.info = saveArtInfo;
+			    					savedFeedArray.showIcon = false;
+			    					savedFeedArray.senderActive = false;
+			    					savedFeedData.chunks.push(savedFeedArray);
+			    						
+			    						
+			    					var oModel = new sap.ui.model.json.JSONModel();
+			    					// set the data for the model
+			    					oModel.setData(savedFeedData);
+			    					// set the model to the list
+			    					oSavedFeedList.setModel(oModel);
+			    					// bind Aggregation
+			    					oSavedFeedList.bindAggregation("items", "/chunks", oSavedFeedListItemTemplate);				            	
+			            	
+			            	
 			                // we are done hide the swipeContent from screen
 			            	oFeedList.swipeOut();
 			            }
@@ -106,8 +153,12 @@
 		       // alert("Swipe Data:" +oSwipeListItem.data);
 		       // alert("Swipe Content:" +oSwipeContent);
 		        
-		     	var selectedInfo = e.getParameter('listItem').getInfo();
-		     	 selectedItem = selectedInfo ;
+		     	 saveArtInfo = e.getParameter('listItem').getInfo();
+		     	 saveArtSender = e.getParameter('listItem').getSender();
+		     	 saveArtText = e.getParameter('listItem').getText();
+		     	 saveArtTimestamp = e.getParameter('listItem').getTimestamp();
+		     	
+		     	 
 		    // 	alert("selectedItem" +selectedItem);		        
 		        
 
