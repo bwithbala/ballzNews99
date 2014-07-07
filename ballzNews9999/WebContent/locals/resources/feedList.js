@@ -76,10 +76,44 @@
 		strConcat = strConcat.concat(px);
 
 		var oFeedList = new sap.m.List("oFeedItemList", {
-			inset : true,
+			inset : false,
 			showUnread: true,
-			mode : "SingleSelectMaster",
+		//	mode : "SingleSelectMaster",
 			BackgroundDesign: sap.m.BackgroundDesign.Transparent,
+			swipeContent : 
+				
+				new sap.m.Button({
+			        text : "Save",
+			        icon: sap.ui.core.IconPool.getIconURI("save"),			        
+			        type : "Accept",
+			            tap : function() { 
+
+                            alert("Inside Tap Function");
+			                // we are done hide the swipeContent from screen
+			            	oFeedList.swipeOut();
+			            }
+			        }),				
+				
+
+		    swipeDirection: sap.m.SwipeDirection.RightToLeft,		
+		    swipe : function(e) { // register swipe event
+		        var oSwipeListItem = e.getParameter("listItem"), // get swiped list item from event
+		            oSwipeContent = e.getParameter("swipeContent"); // get swiped content from event
+		        alert("Swipe Triggered");
+		        alert("Swipe Data:" +oSwipeListItem.data);
+		        alert("Swipe Content:" +oSwipeContent);
+		        
+
+/*		        // Check swiped list item if it is already approved or not
+		        if (oSwipeListItem.data("approved")) {
+		            // List item is approved, change swipeContent(button) text to Disapprove and type to Reject
+		            oSwipeContent.setText("Disapprove").setType("Reject");
+		        } else {
+		            // List item is not approved, change swipeContent(button) text to Approve and type to Accept
+		            oSwipeContent.setText("Approve").setType("Accept");
+		        }*/
+		    },		    
+			
 		/*	select: function(event){
 			     	var selectedInfo = event.getParameter('listItem').getInfo();
 			     	 selectedItem = selectedInfo ;
@@ -169,21 +203,7 @@
 		        		
 		//	}
 		//showSeparators: sap.m.ListSeparators.All,
-			swipeContent : new sap.m.HBox({
-		        items : [
-		            new sap.m.Image({
-		                src : sap.ui.core.IconPool.getIconURI("save"),
-		                tap : function() { 
-		                  
-
-		                    // we are done hide the swipeContent from screen
-		                	oFeedList.swipeOut();
-		                }
-		            })
-
-		       ]
-		    }),	
-		    swipeDirection: sap.m.SwipeDirection.RightToLeft,  
+  
 			
 		});
 
