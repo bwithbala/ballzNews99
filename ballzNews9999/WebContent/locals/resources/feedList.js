@@ -112,7 +112,7 @@
 			        type : "Accept",
 			            tap : function() { 
 
-                         //   alert("Inside Tap Function");
+                            alert("Inside Tap Function");
                           //  alert("selectedItem after Tap" +selectedItem);	
 			            	
 			    			var savedFeedData = {
