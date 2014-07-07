@@ -108,7 +108,7 @@
 		// set the model to the list
 		oSavedFeedList.setModel(oSavedFeedModel);
 		// bind Aggregation
-		oSavedFeedList.bindAggregation("items", "/chunks", oSavedFeedListItemTemplate);				
+		oSavedFeedList.bindAggregation("items", "/chunks", oSavedListItemTemplate);				
 		
 		var oFeedList = new sap.m.List("oFeedItemList", {
 			inset : false,
