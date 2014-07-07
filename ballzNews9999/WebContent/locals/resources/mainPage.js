@@ -147,7 +147,7 @@ jQuery.sap.require("locals.resources.feedList");
 				  onewsSection.setMaxHeight("100px");
 				  
 				  
-				  var oHeadLines = new sap.ui.commons.Button({
+				  var oHeadLines = new sap.m.Button({
 					    text : "Head Lines",
 					    style: sap.ui.commons.ButtonStyle.Emph,
 					    press : function() {
@@ -157,7 +157,7 @@ jQuery.sap.require("locals.resources.feedList");
 					    }
 					});
 
-					var oNational = new sap.ui.commons.Button({
+					var oNational = new sap.m.Button({
 					    text : "National",
 					    style: sap.ui.commons.ButtonStyle.Emph,
 					    press : function() {
@@ -168,7 +168,7 @@ jQuery.sap.require("locals.resources.feedList");
 					
 					});
 
-					var oWorld = new sap.ui.commons.Button({
+					var oWorld = new sap.m.Button({
 					    text : "World News",
 					    style: sap.ui.commons.ButtonStyle.Emph,
 					    press : function() {
@@ -179,7 +179,7 @@ jQuery.sap.require("locals.resources.feedList");
 					
 					});					
 					
-					var oState = new sap.ui.commons.Button({
+					var oState = new sap.m.Button({
 					    text : "State News",
 					    style: sap.ui.commons.ButtonStyle.Emph,
 					    press : function() {
@@ -193,7 +193,24 @@ jQuery.sap.require("locals.resources.feedList");
 					});
 					onewsSection.addContent( oVLNewsLay);
 					  
-					oAccordion.addSection( onewsSection );				  
+					oAccordion.addSection( onewsSection );		
+					
+					
+					var oActionSheet = new sap.m.ActionSheet("actionSheet1", {
+						showCancelButton: false,
+						buttons: [
+                             oHeadLines,
+                             oNational,
+                             oWorld,
+                             oState
+						],
+						placement: sap.m.PlacementType.Bottom,
+						cancelButtonPress: function(){
+							jQuery.sap.log.info("sap.m.ActionSheet: cancelButton is pressed");
+						}
+					});
+					
+					
 	
 
 				var oNewsCatPopOver = new sap.m.Popover(
@@ -218,7 +235,7 @@ jQuery.sap.require("locals.resources.feedList");
 							//	footer: footer,
 							content : [
 									
-                               oAccordion,
+                               oActionSheet,
 							],
 							//initialFocus : "focusInput"
 						});	  
@@ -229,8 +246,14 @@ jQuery.sap.require("locals.resources.feedList");
 				contentLeft : [ new sap.m.Button('SlideRight', {
 					icon : sap.ui.core.IconPool.getIconURI("menu2"),
 					press : function() {
-						oNewsCatPopOver.setPlacement(sap.m.PlacementType.right);
-						oNewsCatPopOver.openBy(this);						
+						
+						oActionSheet.setPlacement(sap.m.PlacementType.Vertical);
+						oActionSheet.setShowCancelButton(false);
+						oActionSheet.openBy(this);
+						
+						
+						/*oNewsCatPopOver.setPlacement(sap.m.PlacementType.right);
+						oNewsCatPopOver.openBy(this);						*/
 						//app.to("page2", "slide");
 					}
 				}) ],
