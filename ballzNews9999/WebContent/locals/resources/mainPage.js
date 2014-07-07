@@ -155,7 +155,7 @@
 									
                                oAccordion,
 							],
-							initialFocus : "focusInput"
+							//initialFocus : "focusInput"
 						});	  
 				
 				
