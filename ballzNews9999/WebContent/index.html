@@ -75,7 +75,7 @@
 				//Enable swiping...
 				$("#content").swipe( {
 					
-					tap:function(event, target) {
+/* 					tap:function(event, target) {
 						  alert("Inside Tap");
 						  oPopover.close();
 				        },
@@ -84,7 +84,7 @@
 				        	alert("Inside Double Tap");
 				        	/*  alert("Inside Tap");doubleTapCount++;
 				            msg(target); */
-				          },
+				          }, */
 					
 					//Generic swipe handler for all directions
 					swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
@@ -99,6 +99,15 @@
 							oPopover.setPlacement(sap.m.PlacementType.Left);
 							oPopover.openBy(this);
 						}
+					 	if (direction == "left" && fingerCount == "2")
+						{ 
+							
+ 					        alert("You Swiped:" +direction);
+							alert("Finger Count: " +fingerCount);
+							//alert("Finger Data: " +fingerData); 
+							
+							oPopover.close();
+						}					 	
 
 						
 					},
