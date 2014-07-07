@@ -242,7 +242,7 @@ jQuery.sap.require("locals.resources.feedList");
 				
 			var d = sap.ui.Device;
 			var Bar = new sap.m.Bar({
-				contentLeft : [ new sap.m.Button('Select News', {
+				contentLeft : [ new sap.m.Button('SelectNews', {
 					icon : sap.ui.core.IconPool.getIconURI("menu2"),
 					press : function() {
 						
