@@ -153,7 +153,7 @@
 							//	footer: footer,
 							content : [
 									
-                               oAccordion
+                               oAccordion,
 							],
 							initialFocus : "focusInput"
 						});	  
@@ -164,8 +164,8 @@
 				contentLeft : [ new sap.m.Button('SlideRight', {
 					icon : sap.ui.core.IconPool.getIconURI("menu2"),
 					press : function() {
-						oNewsCatPopOver.setPlacement(sap.m.PlacementType.right);
-						oNewsCatPopOver.openBy(this);						
+						/*oNewsCatPopOver.setPlacement(sap.m.PlacementType.right);
+						oNewsCatPopOver.openBy(this);	*/					
 						//app.to("page2", "slide");
 					}
 				}) ],
