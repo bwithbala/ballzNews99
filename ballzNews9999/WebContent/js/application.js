@@ -55,6 +55,9 @@ oApplication = { // Application is an object
 		 
 		 
     	appFeedList.addPage(feedListPage);			
+    	
+    	selectedNews = "http://www.maalaimalar.com/RSS/SectionRssFeed.aspx?Id=1&Main=18";    	
+    	fillFeedListData(selectedNews);
 
 	}	
 }	

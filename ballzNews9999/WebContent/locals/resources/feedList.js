@@ -1,7 +1,7 @@
 //alert("Inside Feed List");
 		//jQuery.sap.require("ballznews999.resources.jgfeed");	
 
-        selectedNews = "http://www.maalaimalar.com/RSS/SectionRssFeed.aspx?Id=1&Main=18";
+      //  selectedNews = "http://www.maalaimalar.com/RSS/SectionRssFeed.aspx?Id=1&Main=18";
 
 
 		function fillFeedListData(url) {
@@ -185,5 +185,5 @@
 
 		});
 
-		fillFeedListData(selectedNews);
+//		fillFeedListData(selectedNews);
 		

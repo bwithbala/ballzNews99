@@ -1,4 +1,7 @@
-			var feedListPage = new sap.m.Page("feedListPage", {
+
+jQuery.sap.require("locals.resources.feedList");
+
+        var feedListPage = new sap.m.Page("feedListPage", {
 				title : "Ballz News",
 				BackgroundDesign: sap.m.BackgroundDesign.Transparent,
 				showHeader : true,
@@ -114,32 +117,81 @@
 				
 				//Create the Accordion control
 				var oAccordion = new sap.ui.commons.Accordion("NewsCatAccordion"); 
-							
+				
+				  var oDivider = new sap.ui.commons.HorizontalDivider("divider");	  
+				  oDivider.setType(sap.ui.commons.HorizontalDividerType.Area);
+				  oDivider.setWidth("100%");
+				  var oDivider1 = new sap.ui.commons.HorizontalDivider("divider1");	  
+				  oDivider1.setType(sap.ui.commons.HorizontalDividerType.Area);		
+				  oDivider1.setWidth("100%");
+				  
+				  var oDivider2 = new sap.ui.commons.HorizontalDivider("divider2");	  
+				  oDivider2.setType(sap.ui.commons.HorizontalDividerType.Area);		
+				  oDivider2.setWidth("100%");
+				  
+				  var oDivider3 = new sap.ui.commons.HorizontalDivider("divider3");	  
+				  oDivider3.setType(sap.ui.commons.HorizontalDividerType.Area);		
+				  oDivider3.setWidth("100%");				  
+				  
+				  
+				
 				//Building Section 1
 				var onewsSection = new sap.ui.commons.AccordionSection( "newsSection" );		
 				  onewsSection.setTitle("News");		
 				  onewsSection.setTooltip("News");
 				  onewsSection.setMaxHeight("100px");
 				  
+				  
 				  var oHeadLines = new sap.ui.commons.Button({
 					    text : "Head Lines",
 					  //  tooltip : " ",
-					    lite: true,
+					   // lite: true,
+					    style: sap.ui.commons.ButtonStyle.Emph,
 					    press : function() {
-					    	alert('Alert from ' + oHeadLines.getText());
-					    	}
+					   // 	alert('Alert from ' + oHeadLines.getText());
+					    	selectedNews = "http://www.maalaimalar.com/RSS/SectionRssFeed.aspx?Id=1&Main=18";    	
+					    	fillFeedListData(selectedNews);
+					    }
 					});
 
 					var oNational = new sap.ui.commons.Button({
 					    text : "National",
 					  //  tooltip : "Help Video - Extend Multiple Material",
-					    lite: true,
+					  //  lite: true,
+					    style: sap.ui.commons.ButtonStyle.Emph,
 					    press : function() {
-					    	alert('Alert from ' + oNational.getText());}
+					    	//alert('Alert from ' + oNational.getText());
+					    	selectedNews = "http://www.maalaimalar.com/RSS/SectionRssFeed.aspx?Id=19&Main=18";    	
+					    	fillFeedListData(selectedNews);
+					    }
+					
+					
 					});
 
+					var oWorld = new sap.ui.commons.Button({
+					    text : "World News",
+					    style: sap.ui.commons.ButtonStyle.Emph,
+					    press : function() {
+					    //	alert('Alert from ' + oWorld.getText());
+					    	selectedNews = "http://www.maalaimalar.com/RSS/SectionRssFeed.aspx?Id=20&Main=18";    	
+					    	fillFeedListData(selectedNews);
+					    }
+					
+					
+					});					
+					
+					var oState = new sap.ui.commons.Button({
+					    text : "State News",
+					    style: sap.ui.commons.ButtonStyle.Emph,
+					    press : function() {
+					    //	alert('Alert from ' + oState.getText());
+					    	selectedNews = "http://www.maalaimalar.com/RSS/SectionRssFeed.aspx?Id=28&Main=18";    	
+					    	fillFeedListData(selectedNews);
+					    }
+					});							
+					
 					var oVLNewsLay = new sap.ui.commons.layout.VerticalLayout("oVLNewsLay", {
-						content: [oHeadLines, oNational]
+						content: [oHeadLines, oDivider, oNational,oDivider1, oWorld,oDivider2, oState, oDivider3]
 					});
 					onewsSection.addContent( oVLNewsLay);
 					  
