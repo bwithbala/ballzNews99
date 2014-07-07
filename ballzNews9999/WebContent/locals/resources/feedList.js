@@ -74,6 +74,8 @@
 		strConcat = strConcat.concat(strWidth);
 		strConcat = strConcat.concat(w);
 		strConcat = strConcat.concat(px);
+		
+		var selectedItem;
 
 		var oFeedList = new sap.m.List("oFeedItemList", {
 			inset : false,
@@ -89,6 +91,7 @@
 			            tap : function() { 
 
                             alert("Inside Tap Function");
+                            alert("selectedItem after Tap" +selectedItem);	
 			                // we are done hide the swipeContent from screen
 			            	oFeedList.swipeOut();
 			            }
@@ -102,6 +105,10 @@
 		        alert("Swipe Triggered");
 		        alert("Swipe Data:" +oSwipeListItem.data);
 		        alert("Swipe Content:" +oSwipeContent);
+		        
+		     	var selectedInfo = e.getParameter('listItem').getInfo();
+		     	 selectedItem = selectedInfo ;
+		     	alert("selectedItem" +selectedItem);		        
 		        
 
 /*		        // Check swiped list item if it is already approved or not
