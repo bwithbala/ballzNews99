@@ -265,7 +265,14 @@ jQuery.sap.require("locals.resources.feedList");
 							oPopover.setPlacement(sap.m.PlacementType.Left);
 							oPopover.openBy(this);
 						}
-					})
+					}),
+					new sap.m.Button('SavedList', {
+						icon : sap.ui.core.IconPool.getIconURI("save"),
+						press : function() {
+							appFeedList.to("savedListPage", "slide");
+
+						}
+					})					
 			]
 			});
 			

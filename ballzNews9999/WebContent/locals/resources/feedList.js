@@ -90,8 +90,8 @@
 			        type : "Accept",
 			            tap : function() { 
 
-                            alert("Inside Tap Function");
-                            alert("selectedItem after Tap" +selectedItem);	
+                         //   alert("Inside Tap Function");
+                          //  alert("selectedItem after Tap" +selectedItem);	
 			                // we are done hide the swipeContent from screen
 			            	oFeedList.swipeOut();
 			            }
@@ -102,13 +102,13 @@
 		    swipe : function(e) { // register swipe event
 		        var oSwipeListItem = e.getParameter("listItem"), // get swiped list item from event
 		            oSwipeContent = e.getParameter("swipeContent"); // get swiped content from event
-		        alert("Swipe Triggered");
-		        alert("Swipe Data:" +oSwipeListItem.data);
-		        alert("Swipe Content:" +oSwipeContent);
+		      //  alert("Swipe Triggered");
+		       // alert("Swipe Data:" +oSwipeListItem.data);
+		       // alert("Swipe Content:" +oSwipeContent);
 		        
 		     	var selectedInfo = e.getParameter('listItem').getInfo();
 		     	 selectedItem = selectedInfo ;
-		     	alert("selectedItem" +selectedItem);		        
+		    // 	alert("selectedItem" +selectedItem);		        
 		        
 
 /*		        // Check swiped list item if it is already approved or not
