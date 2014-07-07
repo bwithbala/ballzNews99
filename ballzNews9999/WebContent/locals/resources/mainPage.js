@@ -211,9 +211,8 @@ jQuery.sap.require("locals.resources.feedList");
 					});
 					
 					
-	
 
-				var oNewsCatPopOver = new sap.m.Popover(
+/*				var oNewsCatPopOver = new sap.m.Popover(
 						{
 							placement : sap.m.PlacementType.right,
 							title : "Select News",
@@ -238,22 +237,19 @@ jQuery.sap.require("locals.resources.feedList");
                                oActionSheet,
 							],
 							//initialFocus : "focusInput"
-						});	  
+						});	  */
 				
 				
 			var d = sap.ui.Device;
 			var Bar = new sap.m.Bar({
-				contentLeft : [ new sap.m.Button('SlideRight', {
+				contentLeft : [ new sap.m.Button('Select News', {
 					icon : sap.ui.core.IconPool.getIconURI("menu2"),
 					press : function() {
 						
 						oActionSheet.setPlacement(sap.m.PlacementType.Vertical);
 						oActionSheet.setShowCancelButton(false);
 						oActionSheet.openBy(this);
-						
-						
-						/*oNewsCatPopOver.setPlacement(sap.m.PlacementType.right);
-						oNewsCatPopOver.openBy(this);						*/
+	
 						//app.to("page2", "slide");
 					}
 				}) ],

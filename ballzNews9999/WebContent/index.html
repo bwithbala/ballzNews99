@@ -85,8 +85,12 @@
 							alert("Finger Count: " +fingerCount);
 							//alert("Finger Data: " +fingerData); 
 							
-							oPopover.setPlacement(sap.m.PlacementType.Left);
-							oPopover.openBy(this);
+/* 							oPopover.setPlacement(sap.m.PlacementType.Left);
+							oPopover.openBy(this); */
+							
+							oActionSheet.setPlacement(sap.m.PlacementType.Vertical);
+							oActionSheet.setShowCancelButton(false);
+							oActionSheet.openBy(this);							
 						}
 					 	if (direction == "left" && fingerCount == "2")
 						{ 
