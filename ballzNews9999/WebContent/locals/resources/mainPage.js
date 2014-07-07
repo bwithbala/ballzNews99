@@ -121,15 +121,30 @@
 				  onewsSection.setTooltip("News");
 				  onewsSection.setMaxHeight("100px");
 				  
-					var oheadLines = new sap.ui.commons.Label( "headLines" );
-					  oheadLines.setText("Head Lines");			  		 
-					  onewsSection.addContent( oLabel1);
-					  
-					var oNational = new sap.ui.commons.Label( "national" );
-						  oNational.setText("National");			  		 
-						  onewsSection.addContent( oNational);					  
+				  var oHeadLines = new sap.ui.commons.Button({
+					    text : "Head Lines",
+					  //  tooltip : " ",
+					    lite: true,
+					    press : function() {
+					    	alert('Alert from ' + oHeadLines.getText());
+					    	}
+					});
 
-				  oAccordion.addSection( onewsSection );				
+					var oNational = new sap.ui.commons.Button({
+					    text : "National",
+					  //  tooltip : "Help Video - Extend Multiple Material",
+					    lite: true,
+					    press : function() {
+					    	alert('Alert from ' + oNational.getText());}
+					});
+
+					var oVLNewsLay = new sap.ui.commons.layout.VerticalLayout("oVLNewsLay", {
+						content: [oHeadLines, oNational]
+					});
+					onewsSection.addContent( oVLNewsLay);
+					  
+					oAccordion.addSection( onewsSection );				  
+	
 
 				var oNewsCatPopOver = new sap.m.Popover(
 						{
@@ -164,8 +179,8 @@
 				contentLeft : [ new sap.m.Button('SlideRight', {
 					icon : sap.ui.core.IconPool.getIconURI("menu2"),
 					press : function() {
-						/*oNewsCatPopOver.setPlacement(sap.m.PlacementType.right);
-						oNewsCatPopOver.openBy(this);	*/					
+						oNewsCatPopOver.setPlacement(sap.m.PlacementType.right);
+						oNewsCatPopOver.openBy(this);						
 						//app.to("page2", "slide");
 					}
 				}) ],
