@@ -110,16 +110,65 @@
 							],
 							initialFocus : "focusInput"
 						});	     	
+				
+				
+				//Create the Accordion control
+				var oAccordion = new sap.ui.commons.Accordion("NewsCatAccordion"); 
+							
+				//Building Section 1
+				var onewsSection = new sap.ui.commons.AccordionSection( "newsSection" );		
+				  onewsSection.setTitle("News");		
+				  onewsSection.setTooltip("News");
+				  onewsSection.setMaxHeight("100px");
+				  
+					var oheadLines = new sap.ui.commons.Label( "headLines" );
+					  oheadLines.setText("Head Lines");			  		 
+					  onewsSection.addContent( oLabel1);
+					  
+					var oNational = new sap.ui.commons.Label( "national" );
+						  oNational.setText("National");			  		 
+						  onewsSection.addContent( oNational);					  
 
+				  oAccordion.addSection( onewsSection );				
 
+				var oNewsCatPopOver = new sap.m.Popover(
+						{
+							placement : sap.m.PlacementType.right,
+							title : "Select News",
+							showHeader : true,
+							//		beginButton: oBeginButton,
+							//	endButton: oEndButton,
+							beforeOpen : function(oEvent) {
+								jQuery.sap.log.info("before popover opens!!!");
+							},
+							afterOpen : function(oEvent) {
+								jQuery.sap.log.info("popover is opened finally!!!");
+							},
+							beforeClose : function(oEvent) {
+								jQuery.sap.log.info("before popover closes!!!");
+							},
+							afterClose : function(oEvent) {
+								jQuery.sap.log.info("popover is closed properly!!!");
+							},
+							//	footer: footer,
+							content : [
+									
+                               oAccordion
+							],
+							initialFocus : "focusInput"
+						});	  
+				
+				
 			var d = sap.ui.Device;
 			var Bar = new sap.m.Bar({
-				/*contentLeft : [ new sap.m.Button('SlideRight', {
+				contentLeft : [ new sap.m.Button('SlideRight', {
 					icon : sap.ui.core.IconPool.getIconURI("menu2"),
 					press : function() {
+						oNewsCatPopOver.setPlacement(sap.m.PlacementType.right);
+						oNewsCatPopOver.openBy(this);						
 						//app.to("page2", "slide");
 					}
-				}) ],*/
+				}) ],
 				
 				contentMiddle : [ 
 				                //  oSelect0
