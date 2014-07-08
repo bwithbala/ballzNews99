@@ -21,7 +21,7 @@ jQuery.sap.require("locals.resources.feedList");
     	//Check if there is data into the Storage
     	if (oStorage.get("myLocalData")) {
     		//console.log("Data is from Storage!");
-    		alert("Data From Storage");
+    		//alert("Data From Storage");
     		var oData = oStorage.get("myLocalData");
     		oModel.setData(oData);
     	}

@@ -119,7 +119,7 @@
 			        type : "Reject",
 			            tap : function() { 
 
-                            alert("Inside Tap Function");
+                        //    alert("Inside Tap Function");
                           //  alert("selectedItem after Tap" +selectedItem);	
 			            	
 
@@ -132,16 +132,16 @@
 			    					savedFeedArray.info = saveArtInfo;
 			    					savedFeedArray.showIcon = false;
 			    					savedFeedArray.senderActive = false;
-			    					alert("Saved Feed array:" +savedFeedArray);
+			    			//		alert("Saved Feed array:" +savedFeedArray);
 			    					savedFeedData.chunks.push(savedFeedArray);
 			    					
 			    					var oSavedFeedModel = new sap.ui.model.json.JSONModel();
 			    					// set the data for the model
-			    					alert("Saved Feed Data" +savedFeedData);
+			    				//	alert("Saved Feed Data" +savedFeedData);
 			    					oSavedFeedModel.setData(savedFeedData);
 			    					oSavedFeedModel.refresh(true);
 			    					// set the model to the list
-			    					alert("Saved Feed Model" +oSavedFeedModel);
+			    					//alert("Saved Feed Model" +oSavedFeedModel);
 			    					oSavedFeedList.setModel(oSavedFeedModel);
 			    					// bind Aggregation
 			    					oSavedFeedList.bindAggregation("items", "/chunks", oSavedListItemTemplate);	
