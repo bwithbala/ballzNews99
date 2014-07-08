@@ -102,7 +102,9 @@
 				chunks : []
 			};				
 		
-		
+    	//Storage
+    	jQuery.sap.require("jquery.sap.storage");
+    	oStorage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
 		
 		var oFeedList = new sap.m.List("oFeedItemList", {
 			inset : false,
@@ -137,11 +139,14 @@
 			    					// set the data for the model
 			    					alert("Saved Feed Data" +savedFeedData);
 			    					oSavedFeedModel.setData(savedFeedData);
+			    					oSavedFeedModel.refresh(true);
 			    					// set the model to the list
 			    					alert("Saved Feed Model" +oSavedFeedModel);
 			    					oSavedFeedList.setModel(oSavedFeedModel);
 			    					// bind Aggregation
-			    					oSavedFeedList.bindAggregation("items", "/chunks", oSavedListItemTemplate);					    					
+			    					oSavedFeedList.bindAggregation("items", "/chunks", oSavedListItemTemplate);	
+			    					oStorage.put("myLocalData", savedFeedData);
+
 			    	
 			                // we are done hide the swipeContent from screen
 			            	oFeedList.swipeOut();

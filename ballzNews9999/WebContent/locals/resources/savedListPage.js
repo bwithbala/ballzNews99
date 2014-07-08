@@ -9,4 +9,21 @@ jQuery.sap.require("locals.resources.feedList");
 				navButtonPress: function(){ appFeedList.back(); },
 			});
         
-        savedListPage.addContent(oSavedFeedList);        
+     
+        
+
+
+    	//Check if there is data into the Storage
+    	if (oStorage.get("myLocalData")) {
+    		//console.log("Data is from Storage!");
+    		alert("Data From Storage");
+    		var oData = oStorage.get("myLocalData");
+    		oModel.setData(oData);
+    	}
+    	
+		oSavedFeedList.setModel(oModel);
+		// bind Aggregation
+		oSavedFeedList.bindAggregation("items", "/chunks", oSavedListItemTemplate);	
+    	
+    	
+        savedListPage.addContent(oSavedFeedList);    
