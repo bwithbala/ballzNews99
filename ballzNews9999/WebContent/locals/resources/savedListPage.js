@@ -9,4 +9,4 @@ jQuery.sap.require("locals.resources.feedList");
 				navButtonPress: function(){ appFeedList.back(); },
 			});
         
-		feedListPage.addContent(oSavedFeedList);        
+        savedListPage.addContent(oSavedFeedList);        
