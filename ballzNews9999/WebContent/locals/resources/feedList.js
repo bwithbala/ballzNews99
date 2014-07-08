@@ -118,7 +118,7 @@
 		    	appFeedList.to("newsPage", {payloadInfo:selectedInfo});
 		    },			
 			
-			swipeContent : 
+/*			swipeContent : 
 				
 				new sap.m.Button({
 			        text : "Save",
@@ -170,7 +170,7 @@
 		     	 saveArtSender = e.getParameter('listItem').getSender();
 		     	 saveArtText = e.getParameter('listItem').getText();
 		     	 saveArtTimestamp = e.getParameter('listItem').getTimestamp();
-		    },
+		    },*/
 		    
 
 		    
