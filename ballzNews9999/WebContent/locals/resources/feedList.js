@@ -130,7 +130,7 @@
 			    					savedFeedArray.info = saveArtInfo;
 			    					savedFeedArray.showIcon = false;
 			    					savedFeedArray.senderActive = false;
-			    					alert("Saved Feed Title:" +savedFeedArray.text);
+			    					alert("Saved Feed array:" +savedFeedArray);
 			    					savedFeedData.chunks.push(savedFeedArray);
 			    					
 			    					var oSavedFeedModel = new sap.ui.model.json.JSONModel();
@@ -138,6 +138,7 @@
 			    					alert("Saved Feed Data" +savedFeedData);
 			    					oSavedFeedModel.setData(savedFeedData);
 			    					// set the model to the list
+			    					alert("Saved Feed Model" +oSavedFeedModel);
 			    					oSavedFeedList.setModel(oSavedFeedModel);
 			    					// bind Aggregation
 			    					oSavedFeedList.bindAggregation("items", "/chunks", oSavedListItemTemplate);					    					
