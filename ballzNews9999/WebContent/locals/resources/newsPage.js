@@ -15,15 +15,15 @@
 			});
         
         
-/*		var HtmlIFrame = new sap.ui.core.HTML({
+	var HtmlIFrame = new sap.ui.core.HTML({
 			  content:
 				  "<iframe src=" +
 				  newsLink +
 				  //"width=\"200\" height=\"500\" " +
 				  //"scrolling=\"yes\" +
 				  " > </iframe>"
-		});	           */   
+		});	          
 		
-		sap.m.URLHelper.redirect(newsLink);
+		//sap.m.URLHelper.redirect(newsLink);
 		
-		//newsPage.addContent(urlHelper); 
+		newsPage.addContent(HtmlIFrame); 
