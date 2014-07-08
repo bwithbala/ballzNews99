@@ -121,8 +121,14 @@
 
                         //    alert("Inside Tap Function");
                           //  alert("selectedItem after Tap" +selectedItem);	
-			            	
-
+	    				     	var oSavedFeedModel = new sap.ui.model.json.JSONModel();
+			    			    	//Check if there is data into the Storage
+			    			    	if (oStorage.get("myLocalData")) {
+			    			    		//console.log("Data is from Storage!");
+			    			    		//alert("Data From Storage");
+			    			    		savedFeedData = oStorage.get("myLocalData");
+			    			    		oSavedFeedModel.setData(savedFeedData);
+			    			    	}	
 			    		
 			    					var savedFeedArray = {};	
 			    						
@@ -134,8 +140,7 @@
 			    					savedFeedArray.senderActive = false;
 			    			//		alert("Saved Feed array:" +savedFeedArray);
 			    					savedFeedData.chunks.push(savedFeedArray);
-			    					
-			    					var oSavedFeedModel = new sap.ui.model.json.JSONModel();
+			    
 			    					// set the data for the model
 			    				//	alert("Saved Feed Data" +savedFeedData);
 			    					oSavedFeedModel.setData(savedFeedData);
