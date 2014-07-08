@@ -17,21 +17,13 @@
         
 		var HtmlIFrame = new sap.ui.core.HTML({
 			  content:
-			        "<div style='overflow:scroll;'>" +
-			          "<iframe src=" + newsLink 
-			      // + strConcat
-			         //"height=500px width=1200px>" 
-			      //  +  style
-			      //  + scrolling  
-			        + ">" +
-			        + "</iframe>" +
-			        "</div>"
-				  
-/*				  "<iframe src=" +
+				  "<iframe src=" +
 				  newsLink +
 				  //"width=\"200\" height=\"500\" " +
-				  "scrolling=\"yes\"> </iframe>"*/
+				  //"scrolling=\"yes\" +
+				  " > </iframe>"
 		});	              
 		
+		var urlHelper = sap.m.URLHelper.redirect(newsLink);
 		
-		newsPage.addContent(HtmlIFrame);
+		newsPage.addContent(urlHelper);
