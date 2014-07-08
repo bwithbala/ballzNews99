@@ -116,6 +116,20 @@
 		    	alert("Select Triggered");
 		    	var selectedInfo = event.getParameter('listItem').getInfo();
 		    	appFeedList.to("newsPage", {payloadInfo:selectedInfo});
+		    	
+		    	var HtmlIFrame = new sap.ui.core.HTML({
+					  content:
+						  "<iframe src=" +
+						  selectedInfo +
+						  //"width=\"200\" height=\"500\" " +
+						  //"scrolling=\"yes\" +
+						  " > </iframe>"
+				});	          
+				
+				//sap.m.URLHelper.redirect(newsLink);
+				
+				newsPage.addContent(HtmlIFrame); 		    	
+		    	
 		    },			
 			
 			swipeContent : 
@@ -285,4 +299,8 @@
 		});
 
 //		fillFeedListData(selectedNews);
+		
+		
+		
+
 		

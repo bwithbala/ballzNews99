@@ -10,20 +10,9 @@
 			}).addEventDelegate({
 				onBeforeShow: function(evt) {
 					newsLink = evt.data.payloadInfo;
-					alert("News Link from News Page:" +newsLink);
+				//	alert("News Link from News Page:" +newsLink);
 				}
 			});
         
+     //  alert("News Link:" +newsLink);
         
-	var HtmlIFrame = new sap.ui.core.HTML({
-			  content:
-				  "<iframe src=" +
-				  newsLink +
-				  //"width=\"200\" height=\"500\" " +
-				  //"scrolling=\"yes\" +
-				  " > </iframe>"
-		});	          
-		
-		//sap.m.URLHelper.redirect(newsLink);
-		
-		newsPage.addContent(HtmlIFrame); 
