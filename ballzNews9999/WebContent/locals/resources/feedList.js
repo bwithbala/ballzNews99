@@ -118,14 +118,9 @@
 			        icon: sap.ui.core.IconPool.getIconURI("save"),			        
 			        type : "Reject",
 			            tap : function() { 
-
-                        //    alert("Inside Tap Function");
-                          //  alert("selectedItem after Tap" +selectedItem);	
 	    				     	var oSavedFeedModel = new sap.ui.model.json.JSONModel();
 			    			    	//Check if there is data into the Storage
 			    			    	if (oStorage.get("myLocalData")) {
-			    			    		//console.log("Data is from Storage!");
-			    			    		//alert("Data From Storage");
 			    			    		savedFeedData = oStorage.get("myLocalData");
 			    			    		oSavedFeedModel.setData(savedFeedData);
 			    			    	}	
@@ -138,15 +133,13 @@
 			    					savedFeedArray.info = saveArtInfo;
 			    					savedFeedArray.showIcon = false;
 			    					savedFeedArray.senderActive = false;
-			    			//		alert("Saved Feed array:" +savedFeedArray);
 			    					savedFeedData.chunks.push(savedFeedArray);
 			    
 			    					// set the data for the model
-			    				//	alert("Saved Feed Data" +savedFeedData);
+
 			    					oSavedFeedModel.setData(savedFeedData);
-			    				//	oSavedFeedModel.refresh(true);
+			    					oSavedFeedModel.refresh(true);
 			    					// set the model to the list
-			    					//alert("Saved Feed Model" +oSavedFeedModel);
 			    					oSavedFeedList.setModel(oSavedFeedModel);
 			    					// bind Aggregation
 			    					oSavedFeedList.bindAggregation("items", "/chunks", oSavedListItemTemplate);	
@@ -163,28 +156,18 @@
 		    swipe : function(e) { // register swipe event
 		        var oSwipeListItem = e.getParameter("listItem"), // get swiped list item from event
 		            oSwipeContent = e.getParameter("swipeContent"); // get swiped content from event
-		      //  alert("Swipe Triggered");
-		       // alert("Swipe Data:" +oSwipeListItem.data);
-		       // alert("Swipe Content:" +oSwipeContent);
 		        
 		     	 saveArtInfo = e.getParameter('listItem').getInfo();
 		     	 saveArtSender = e.getParameter('listItem').getSender();
 		     	 saveArtText = e.getParameter('listItem').getText();
 		     	 saveArtTimestamp = e.getParameter('listItem').getTimestamp();
-		     	
-		     	 
-		    // 	alert("selectedItem" +selectedItem);		        
-		        
-
-/*		        // Check swiped list item if it is already approved or not
-		        if (oSwipeListItem.data("approved")) {
-		            // List item is approved, change swipeContent(button) text to Disapprove and type to Reject
-		            oSwipeContent.setText("Disapprove").setType("Reject");
-		        } else {
-		            // List item is not approved, change swipeContent(button) text to Approve and type to Accept
-		            oSwipeContent.setText("Approve").setType("Accept");
-		        }*/
-		    },		    
+		    },
+		    
+		    select: function(event){
+		    	var selectedInfo = event.getParameter('listItem').getInfo();
+		    	appFeedList.to("newsPage", {payloadInfo:selectedInfo});
+		    },
+		    
 			
 		/*	select: function(event){
 			     	var selectedInfo = event.getParameter('listItem').getInfo();

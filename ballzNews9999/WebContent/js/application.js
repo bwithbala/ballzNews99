@@ -53,11 +53,13 @@ oApplication = { // Application is an object
 		 jQuery.sap.require("locals.resources.app");
 		 jQuery.sap.require("locals.resources.mainPage");
 		 jQuery.sap.require("locals.resources.savedListPage");
+		 jQuery.sap.require("locals.resources.newsPage");
 		 
 		 
-		 
-    	appFeedList.addPage(feedListPage);			
-    	appFeedList.addPage(savedListPage);	
+	     appFeedList.addPage(feedListPage);			
+	     appFeedList.addPage(savedListPage);
+	     appFeedList.addPage(newsPage);
+    	
     	
     	selectedNews = "http://www.maalaimalar.com/RSS/SectionRssFeed.aspx?Id=1&Main=18";    	
     	fillFeedListData(selectedNews);
