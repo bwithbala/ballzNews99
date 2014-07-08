@@ -10,7 +10,12 @@ jQuery.sap.require("locals.resources.feedList");
 			});
         
      
-        
+		var data = {
+				chunks : []
+			};
+    	//Create Model
+    	var oModel = new sap.ui.model.json.JSONModel();
+    	oModel.setData(data);
 
 
     	//Check if there is data into the Storage
