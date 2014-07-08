@@ -102,14 +102,7 @@
 				chunks : []
 			};				
 		
-		var oSavedFeedModel = new sap.ui.model.json.JSONModel();
-		// set the data for the model
-		alert("Saved Feed Data" +savedFeedData);
-		oSavedFeedModel.setData(savedFeedData);
-		// set the model to the list
-		oSavedFeedList.setModel(oSavedFeedModel);
-		// bind Aggregation
-		oSavedFeedList.bindAggregation("items", "/chunks", oSavedListItemTemplate);				
+		
 		
 		var oFeedList = new sap.m.List("oFeedItemList", {
 			inset : false,
@@ -139,6 +132,15 @@
 			    					savedFeedArray.senderActive = false;
 			    					alert("Saved Feed Title:" +savedFeedArray.text);
 			    					savedFeedData.chunks.push(savedFeedArray);
+			    					
+			    					var oSavedFeedModel = new sap.ui.model.json.JSONModel();
+			    					// set the data for the model
+			    					alert("Saved Feed Data" +savedFeedData);
+			    					oSavedFeedModel.setData(savedFeedData);
+			    					// set the model to the list
+			    					oSavedFeedList.setModel(oSavedFeedModel);
+			    					// bind Aggregation
+			    					oSavedFeedList.bindAggregation("items", "/chunks", oSavedListItemTemplate);					    					
 			    	
 			                // we are done hide the swipeContent from screen
 			            	oFeedList.swipeOut();
