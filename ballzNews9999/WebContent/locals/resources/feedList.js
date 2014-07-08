@@ -104,6 +104,7 @@
 		
 		var oSavedFeedModel = new sap.ui.model.json.JSONModel();
 		// set the data for the model
+		alert("Saved Feed Data" +savedFeedData);
 		oSavedFeedModel.setData(savedFeedData);
 		// set the model to the list
 		oSavedFeedList.setModel(oSavedFeedModel);
