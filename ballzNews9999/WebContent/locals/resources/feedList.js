@@ -107,10 +107,17 @@
     	oStorage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
 		
 		var oFeedList = new sap.m.List("oFeedItemList", {
-			inset : false,
-			showUnread: true,
+			//inset : false,
+			//showUnread: true,
 		//	mode : "SingleSelectMaster",
 			BackgroundDesign: sap.m.BackgroundDesign.Transparent,
+			
+		    select: function(event){
+		    	alert("Select Triggered");
+		    	var selectedInfo = event.getParameter('listItem').getInfo();
+		    	appFeedList.to("newsPage", {payloadInfo:selectedInfo});
+		    },			
+			
 			swipeContent : 
 				
 				new sap.m.Button({
@@ -118,6 +125,7 @@
 			        icon: sap.ui.core.IconPool.getIconURI("save"),			        
 			        type : "Reject",
 			            tap : function() { 
+			            	alert("Tap Triggered");
 	    				     	var oSavedFeedModel = new sap.ui.model.json.JSONModel();
 			    			    	//Check if there is data into the Storage
 			    			    	if (oStorage.get("myLocalData")) {
@@ -154,6 +162,7 @@
 
 		    swipeDirection: sap.m.SwipeDirection.RightToLeft,		
 		    swipe : function(e) { // register swipe event
+		    	alert("Swipe Triggered");
 		        var oSwipeListItem = e.getParameter("listItem"), // get swiped list item from event
 		            oSwipeContent = e.getParameter("swipeContent"); // get swiped content from event
 		        
@@ -163,10 +172,7 @@
 		     	 saveArtTimestamp = e.getParameter('listItem').getTimestamp();
 		    },
 		    
-		    select: function(event){
-		    	var selectedInfo = event.getParameter('listItem').getInfo();
-		    	appFeedList.to("newsPage", {payloadInfo:selectedInfo});
-		    },
+
 		    
 			
 		/*	select: function(event){
