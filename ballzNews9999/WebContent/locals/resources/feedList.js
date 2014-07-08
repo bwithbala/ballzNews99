@@ -32,7 +32,7 @@
 						var string = date.getDate() + " " + months[date.getMonth()]
 								+ " " + date.getFullYear();
 
-					feedArray.timestamp = string;
+					    feedArray.timestamp = string;
 						feedArray.sender = entry.title;
 						feedArray.text = entry.contentSnippet;
 						feedArray.info = entry.link;
@@ -109,7 +109,7 @@
 		var oFeedList = new sap.m.List("oFeedItemList", {
 			//inset : false,
 			//showUnread: true,
-		//	mode : "SingleSelectMaster",
+			mode : "SingleSelectMaster",
 			BackgroundDesign: sap.m.BackgroundDesign.Transparent,
 			
 		    select: function(event){
@@ -118,7 +118,7 @@
 		    	appFeedList.to("newsPage", {payloadInfo:selectedInfo});
 		    },			
 			
-/*			swipeContent : 
+			swipeContent : 
 				
 				new sap.m.Button({
 			        text : "Save",
@@ -170,7 +170,7 @@
 		     	 saveArtSender = e.getParameter('listItem').getSender();
 		     	 saveArtText = e.getParameter('listItem').getText();
 		     	 saveArtTimestamp = e.getParameter('listItem').getTimestamp();
-		    },*/
+		    },
 		    
 
 		    
