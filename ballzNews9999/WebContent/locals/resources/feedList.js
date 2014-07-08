@@ -139,7 +139,7 @@
 			    					// set the data for the model
 			    				//	alert("Saved Feed Data" +savedFeedData);
 			    					oSavedFeedModel.setData(savedFeedData);
-			    					oSavedFeedModel.refresh(true);
+			    				//	oSavedFeedModel.refresh(true);
 			    					// set the model to the list
 			    					//alert("Saved Feed Model" +oSavedFeedModel);
 			    					oSavedFeedList.setModel(oSavedFeedModel);
