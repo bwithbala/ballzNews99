@@ -124,15 +124,15 @@
 		    	
 		    	var HtmlIFrame = new sap.ui.core.HTML({
 					  content: 
-/*						  "<div style='overflow: scroll'>" + 
-						  "<iframe src=" +
+						  "<div id='diviframe' style='overflow: scroll'>" + 
+						  "<iframe id='iframeiframe' src=" +
 						  selectedInfo +
 						  //"width=\"200\" height=\"500\" " +
 						  //"scrolling=\"yes\" +
 						  " > </iframe>" +
-						  "</div>"*/
+						  "</div>"
 						  
-		    	"<div id=\"diviframe\" style=\"overflow: scroll\"><iframe id=\"iframeiframe\" src=\"http://www.maalaimalar.com\" ></iframe></div>" 						  
+		    	//"<div id=\"diviframe\" style=\"overflow: scroll\"><iframe id=\"iframeiframe\" src=\"http://www.maalaimalar.com\" ></iframe></div>" 						  
 						  
 				});	          
 				
