@@ -8,7 +8,7 @@ jQuery.sap.require("locals.resources.feedList");
 				//title : "Saved Articles",
 				BackgroundDesign: sap.m.BackgroundDesign.Transparent,
 				showHeader : true,
-				enableScrolling : false,
+				enableScrolling : true,
 				showNavButton: true,
 				navButtonPress: function(){ appFeedList.back(); },
 			}).addEventDelegate({
