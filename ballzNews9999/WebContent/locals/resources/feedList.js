@@ -123,7 +123,7 @@
 		    //	getPageData(selectedInfo);
 		    	
 		    	var HtmlIFrame = new sap.ui.core.HTML({
-					  content: "<div id=\"container\"></div>"
+					  content: 
 /*						  "<div style='overflow: scroll'>" + 
 						  "<iframe src=" +
 						  selectedInfo +
@@ -131,16 +131,32 @@
 						  //"scrolling=\"yes\" +
 						  " > </iframe>" +
 						  "</div>"*/
+						  
+		    	"<div id=\"diviframe\" style=\"overflow: scroll\"><iframe id=\"iframeiframe\" src=\"http://www.maalaimalar.com\" ></iframe></div>" 						  
+						  
 				});	          
 				
 				//sap.m.URLHelper.redirect(newsLink);
 				
 				newsPage.addContent(HtmlIFrame); 		
 				
+	       		$(window).resize( function () {
+	    			var iWidth = $("#diviframe").width();
+	    			var iHeight = $(window).height();
+	    			
+	    			$("#iframeiframe").width(iWidth - 4);
+	    			$("#iframeiframe").height(iHeight - 200);		
+	    	}).resize();
+	
+	    	$(document).ready( function() {
+	    			$(window).resize();
+	    		}
+	    	);  					
+				
 				
 				appFeedList.to("newsPage", {payloadInfo:selectedInfo});				
 		    	
-		    },			
+		    },	
 			
 			swipeContent : 
 				
@@ -273,18 +289,7 @@
 		        	//	$("#siteloader").html('<object data="http://www.maalaimalar.com" />');        		
 		        	//	newsPage.addContent(HtmlIFrame);
 		        		
-		/*        		$(window).resize( function () {
-		        			var iWidth = $("#diviframe").width();
-		        			var iHeight = $(window).height();
-		        			
-		        			$("#iframeiframe").width(iWidth - 4);
-		        			$("#iframeiframe").height(iHeight - 200);		
-		        	}).resize();
-
-		        	$(document).ready( function() {
-		        			$(window).resize();
-		        		}
-		        	);  */      		
+	
 		        		
 		//	}
 		//showSeparators: sap.m.ListSeparators.All,

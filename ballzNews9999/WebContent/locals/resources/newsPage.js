@@ -1,6 +1,8 @@
       
 jQuery.sap.require("locals.resources.feedList");
 
+ 
+
        var newsLink;
        var newsPage = new sap.m.Page("newsPage", {
 				//title : "Saved Articles",
@@ -12,9 +14,12 @@ jQuery.sap.require("locals.resources.feedList");
 			}).addEventDelegate({
 				onBeforeShow: function(evt) {
 					newsLink = evt.data.payloadInfo;
+					$('#container').load(newsLink);
 				//	alert("News Link from News Page:" +newsLink);
 				}
 			});
+       
+
         
      //  alert("News Link:" +newsLink);
         

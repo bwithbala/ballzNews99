@@ -53,8 +53,8 @@ oApplication = { // Application is an object
 		 
     	 sap.ui.localResources("locals");
 		 jQuery.sap.require("locals.resources.jgfeed");
-	     jQuery.sap.require("locals.resources.newsPage");
 		 jQuery.sap.require("locals.resources.feedList");
+	     jQuery.sap.require("locals.resources.newsPage");
 		 jQuery.sap.require("locals.resources.app");
 		 jQuery.sap.require("locals.resources.mainPage");
 		 jQuery.sap.require("locals.resources.savedListPage");
