@@ -116,9 +116,9 @@
 			
 		    select: function(event){
 		    	alert("Select Triggered");
-/*		    	var selectedInfo = event.getParameter('listItem').getInfo();
+		    	var selectedInfo = event.getParameter('listItem').getInfo();
 		    	
-		    	//loadWholePage(selectedInfo);
+/*		    	//loadWholePage(selectedInfo);
 		    	
 		    //	getPageData(selectedInfo);
 		    	
