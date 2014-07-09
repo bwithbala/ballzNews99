@@ -116,7 +116,7 @@
 			
 		    select: function(event){
 		    	alert("Select Triggered");
-		    	var selectedInfo = event.getParameter('listItem').getInfo();
+/*		    	var selectedInfo = event.getParameter('listItem').getInfo();
 		    	
 		    	//loadWholePage(selectedInfo);
 		    	
@@ -124,13 +124,13 @@
 		    	
 		    	var HtmlIFrame = new sap.ui.core.HTML({
 					  content: 
-/*						  "<div style='overflow: scroll'>" + 
+						  "<div style='overflow: scroll'>" + 
 						  "<iframe src=" +
 						  selectedInfo +
 						  //"width=\"200\" height=\"500\" " +
 						  //"scrolling=\"yes\" +
 						  " > </iframe>" +
-						  "</div>"*/
+						  "</div>"
 						  
 		    	"<div id=\"diviframe\" style=\"overflow: scroll\"><iframe id=\"iframeiframe\" src=\"http://www.maalaimalar.com\" ></iframe></div>" 						  
 						  
@@ -151,7 +151,7 @@
 	    	$(document).ready( function() {
 	    			$(window).resize();
 	    		}
-	    	);  					
+	    	);  			*/		
 				
 				
 				appFeedList.to("newsPage", {payloadInfo:selectedInfo});				
