@@ -124,13 +124,16 @@
 		    	
 		    	var HtmlIFrame = new sap.ui.core.HTML({
 					  content: 
-						  "<div id='diviframe' style='overflow: scroll'>" + 
+						  
+						  "<div id='container' style='overflow: scroll'></div>"
+						
+/*						  "<div id='diviframe' style='overflow: scroll'>" + 
 						  "<iframe id='iframeiframe' src=" +
 						  selectedInfo +
 						  //"width=\"200\" height=\"500\" " +
 						  //"scrolling=\"yes\" +
 						  " > </iframe>" +
-						  "</div>"
+						  "</div>"*/
 						  
 		    	//"<div id=\"diviframe\" style=\"overflow: scroll\"><iframe id=\"iframeiframe\" src=\"http://www.maalaimalar.com\" ></iframe></div>" 						  
 						  
@@ -140,7 +143,7 @@
 				
 				newsPage.addContent(HtmlIFrame); 		
 				
-	       		$(window).resize( function () {
+/*	       		$(window).resize( function () {
 	    			var iWidth = $("#diviframe").width();
 	    			var iHeight = $(window).height();
 	    			
@@ -151,7 +154,7 @@
 	    	$(document).ready( function() {
 	    			$(window).resize();
 	    		}
-	    	);  				
+	    	);  	*/			
 				
 				
 				appFeedList.to("newsPage", {payloadInfo:selectedInfo});				
