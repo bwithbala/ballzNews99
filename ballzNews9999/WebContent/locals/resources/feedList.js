@@ -122,7 +122,7 @@
 		    	
 		    //	getPageData(selectedInfo);
 		    	
-		    	var HtmlIFrame = new sap.ui.core.HTML({
+/*		    	var HtmlIFrame = new sap.ui.core.HTML({
 					  content: 
 						  "<div id='diviframe' style='overflow: scroll'>" + 
 						  "<iframe id='iframeiframe' src=" +
@@ -151,7 +151,7 @@
 	    	$(document).ready( function() {
 	    			$(window).resize();
 	    		}
-	    	);  				
+	    	);  */				
 				
 				
 				appFeedList.to("newsPage", {payloadInfo:selectedInfo});				
