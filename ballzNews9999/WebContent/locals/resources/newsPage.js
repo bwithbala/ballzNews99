@@ -18,11 +18,9 @@ jQuery.sap.require("locals.resources.feedList");
 				//	alert("News Link from News Page:" +newsLink);
 				}
 			});
+ 
        
-   	$(document).ready( function() {
-   		$('#container').load(newsLink);
-	}
-);  
+
         
      //  alert("News Link:" +newsLink);
         

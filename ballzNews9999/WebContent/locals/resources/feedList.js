@@ -141,7 +141,9 @@
 				
 				//sap.m.URLHelper.redirect(newsLink);
 				
-				newsPage.addContent(HtmlIFrame); 		
+				newsPage.addContent(HtmlIFrame); 	
+				
+			      $('#container').load(selectedInfo);
 				
 /*	       		$(window).resize( function () {
 	    			var iWidth = $("#diviframe").width();
