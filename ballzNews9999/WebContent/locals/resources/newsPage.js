@@ -14,12 +14,15 @@ jQuery.sap.require("locals.resources.feedList");
 			}).addEventDelegate({
 				onBeforeShow: function(evt) {
 					newsLink = evt.data.payloadInfo;
-					$('#container').load(newsLink);
+					
 				//	alert("News Link from News Page:" +newsLink);
 				}
 			});
        
-
+   	$(document).ready( function() {
+   		$('#container').load(newsLink);
+	}
+);  
         
      //  alert("News Link:" +newsLink);
         
