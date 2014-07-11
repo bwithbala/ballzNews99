@@ -47,10 +47,6 @@ oApplication = { // Application is an object
 	
 	initializeUI5: function(){
 		
-/*		microAjax("http://www.maalaimalar.com/RSS/SectionRssFeed.aspx?Id=1&Main=18", function (res) {
-			  alert ("MacroAjax:" +res);
-			});*/
-		 
     	 sap.ui.localResources("locals");
 		 jQuery.sap.require("locals.resources.jgfeed");
 		 jQuery.sap.require("locals.resources.feedList");

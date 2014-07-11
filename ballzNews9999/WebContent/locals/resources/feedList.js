@@ -3,8 +3,7 @@
 
       //  selectedNews = "http://www.maalaimalar.com/RSS/SectionRssFeed.aspx?Id=1&Main=18";
 
-            jQuery.sap.require("locals.resources.responseHTML");
-			jQuery.sap.require("sap.ui.core.IconPool");
+		jQuery.sap.require("sap.ui.core.IconPool");
 		function fillFeedListData(url) {
 
 			var urlFeed = url;
@@ -141,9 +140,9 @@
 				
 				//sap.m.URLHelper.redirect(newsLink);
 				
-				newsPage.addContent(HtmlIFrame); 	
+				//newsPage.addContent(HtmlIFrame); 	
 				
-			      $('#container').load(selectedInfo);
+			    //  $('#container').load(selectedInfo);
 				
 /*	       		$(window).resize( function () {
 	    			var iWidth = $("#diviframe").width();
